@@ -3,21 +3,21 @@
 ============================== */
 @layer theme
   :root
-    --bodyBackgroundColor #010101
-    --colorPrimary #fff
-    --colorSecondary #d62f56
+    --bodyBackgroundColor #fff
+    --colorPrimary #3483fa
+    --colorSecondary #1a157e
+    --layoutWidth 860px
     // --colorSecondaryLight #f3f3f3
-    // --fontPrimary system-ui
+    --fontPrimary system-ui
+    --colorBlue #0d47a1
     // --fontAlternative "arialmt-light", Helvetica, sans-serif;
     // --navBarHeight 48px
-
 
   /* ==============================
   -----------  General ------------
   ============================== */
   body
     background-color var(--bodyBackgroundColor)
-    color var(--colorPrimary)
 
   main
     background-color var(--bodyBackgroundColor)
@@ -25,13 +25,36 @@
   h1, h2, h3, h4, p, a, aside
     font-family var(--fontPrimary)
 
+  h1, h2, h3
+    color var(--colorBlue)
+
   a
-    &:link
-      color var(--colorPrimary)
     &:visited
+    &:link
       color var(--colorPrimary)
     &:hover
       color var(--colorSecondary)
+
+  article
+    h3
+      margin 4px 0 12px 0
+
+  .article-page
+    .block-title
+    .block-info
+      text-align center
+    
+    .block-info
+      margin-bottom 32px
+
+  .home-page
+    section
+      &.block-list
+        margin-bottom var(--size-700)
+    [data-appearance="list"]
+      .article-block-item
+        grid-template-columns 40% auto
+
 
   /* ==============================
   ------------  Menu --------------
@@ -39,12 +62,3 @@
   header
     background-color var(--bodyBackgroundColor)
     box-shadow 0px 4px 0px 0px rgba(0,0,0,0.05)
-
-    .menu-container
-      background-color #000!important
-
-  table
-    tr:nth-child(even)
-      background #2c3337
-    tr:nth-child(odd)
-      background #3e4448
